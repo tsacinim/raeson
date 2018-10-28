@@ -11,17 +11,18 @@ WORKDIR /usr/src
 # COPY package*.json ./
 COPY package.json yarn.lock /usr/src/
 
-# RUN npm install
+RUN npm install
 RUN yarn --production
+
+# Run test + generate test coverage
+RUN npm run test
+RUN yarn test
 
 # If you are building your code for production
 # RUN npm install --only=production
 
 # Bundle app source
 COPY . .
-
-# Run test + generate test coverage
-RUN yarn test
 
 # EXPOSE 8080
 
