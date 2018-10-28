@@ -8,15 +8,11 @@ WORKDIR /usr/src
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 # where available (npm@5+)
-# COPY package*.json ./
-COPY package.json yarn.lock /usr/src/
+COPY package*.json ./
+# COPY package.json yarn.lock /usr/src/
 
 RUN npm install
 # RUN yarn --production
-
-# Run test + generate test coverage
-RUN npm run test
-# RUN yarn test
 
 # If you are building your code for production
 # RUN npm install --only=production
@@ -24,10 +20,14 @@ RUN npm run test
 # Bundle app source
 COPY . .
 
+# Run test + generate test coverage
+RUN npm run test
+# RUN yarn test
+
 # EXPOSE 8080
 
-
-FROM mhart/alpine-node:base-10
+# FROM mhart/alpine-node:base-10
+FROM mhart/alpine-node:10
 WORKDIR /usr/src
 ENV NODE_ENV="production"
 COPY --from=base /usr/src .
