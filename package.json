@@ -29,6 +29,12 @@
     "@feathersjs/express": "^1.2.7",
     "@feathersjs/feathers": "^3.2.3"
   },
+  "greenkeeper": {
+    "ignore": [
+      "package-names",
+      "you-want-me-to-ignore"
+    ]
+  },
   "devDependencies": {
     "jest": "^23.6.0",
     "jest-html-reporter": "^2.4.2",
