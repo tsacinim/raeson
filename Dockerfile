@@ -12,11 +12,11 @@ WORKDIR /usr/src
 COPY package.json yarn.lock /usr/src/
 
 RUN npm install
-RUN yarn --production
+# RUN yarn --production
 
 # Run test + generate test coverage
 RUN npm run test
-RUN yarn test
+# RUN yarn test
 
 # If you are building your code for production
 # RUN npm install --only=production
