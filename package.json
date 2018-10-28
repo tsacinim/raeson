@@ -1,0 +1,16 @@
+{
+  "name": "raeson",
+  "version": "0.0.1",
+  "description": "raeson",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "minicast",
+  "license": "MIT",
+  "dependencies": {
+    "@feathersjs/express": "^1.2.7",
+    "@feathersjs/feathers": "^3.2.3"
+  }
+}
