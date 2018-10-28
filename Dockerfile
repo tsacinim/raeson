@@ -20,12 +20,15 @@ RUN yarn --production
 # Bundle app source
 COPY . .
 
+# Run test + generate test coverage
+RUN yarn test
+
 # EXPOSE 8080
 
-# CMD [ "npm", "start" ]
 
 FROM mhart/alpine-node:base-10
 WORKDIR /usr/src
 ENV NODE_ENV="production"
 COPY --from=base /usr/src .
+# CMD [ "npm", "start" ]
 CMD ["node", "server.js"]

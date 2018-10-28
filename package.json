@@ -5,12 +5,36 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "minicast",
   "license": "MIT",
+  "jest": {
+    "reporters": [
+      "default",
+      [
+        "./node_modules/jest-html-reporter",
+        {
+          "pageTitle": "Test Report",
+          "outputPath": "./public/index.html"
+        }
+      ]
+    ],
+    "globals": {
+      "__DEV__": true
+    },
+    "testRegex": ".+\\.test\\.js$"
+  },
   "dependencies": {
     "@feathersjs/express": "^1.2.7",
     "@feathersjs/feathers": "^3.2.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^23.6.0",
+    "jest-html-reporter": "^2.4.2",
+    "superagent": "^4.0.0-beta.5",
+    "supertest": "^3.3.0"
   }
 }
