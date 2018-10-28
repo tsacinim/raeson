@@ -21,7 +21,7 @@ app.configure(express.rest());
 app.use(express.errorHandler());
 
 app.get('/', (req, res) => {
-  res.send('Hello world!\n');
+  res.send('Hello world!!\n');
 });
 
 // Start the server 
