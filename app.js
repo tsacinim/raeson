@@ -6,6 +6,10 @@ const express = require('@feathersjs/express');
 // This creates an app that is both, an Express and Feathers app
 const app = express(feathers());
 
+// serve static files
+// app.use('/static', express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'public')))
+
 // Turn on JSON body parsing for REST services
 app.use(express.json())
 // Turn on URL-encoded body parsing for REST services
@@ -17,7 +21,7 @@ app.configure(express.rest());
 app.use(express.errorHandler());
 
 app.get('/', (req, res) => {
-  res.status(200).send('Hello world!!!\n');
+  res.status(200).send('Hello world!b!!\n');
 });
 
 module.exports = app;
