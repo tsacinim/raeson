@@ -2,6 +2,7 @@
 
 const feathers = require('@feathersjs/feathers');
 const express = require('@feathersjs/express');
+const path = require('path');
 
 // This creates an app that is both, an Express and Feathers app
 const app = express(feathers());
@@ -20,7 +21,7 @@ app.configure(express.rest());
 // Set up an error handler that gives us nicer errors
 app.use(express.errorHandler());
 
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.status(200).send('Hello world!b!!\n');
 });
 

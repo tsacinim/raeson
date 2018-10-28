@@ -9,6 +9,6 @@ describe('Test the root path', () => {
 
 describe('Test the root path (supertest)', () => {
     test('It should respond to the GET method', () => {
-        return request(app).get('/').expect(200);
+        return request(app).get('/api').expect(200);
     });
 })
