@@ -26,7 +26,7 @@
     "testRegex": ".+\\.test\\.js$"
   },
   "dependencies": {
-    "@feathersjs/express": "^1.2.7",
+    "@feathersjs/express": "^4.3.4",
     "@feathersjs/feathers": "^3.2.3"
   },
   "greenkeeper": {
